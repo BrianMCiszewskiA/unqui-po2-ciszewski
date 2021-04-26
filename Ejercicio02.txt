@@ -1,0 +1,27 @@
+Codigo: 
+String a = "abc";
+String s = a;
+String t;
+
+Ejercicio:
+
+-s.length();
+ devuelve 3.
+-t.length();
+ da error porque la variable t no esta inicializada.
+-1+a;
+ devolveria "1abc".
+-a.toUpperCase();
+ devuelve "ABC".
+-"Libertad".indexOf("r");
+ devuelve 4.
+-"Universidad".lastIdexOf('i');
+ devuelve 7. (a menos que de error por el cambio de comillas)
+-"Quilmes".substring(2,4);
+ devuelve "il".
+-(a.length() + a).startsWith("a");
+ devolveria false.
+-s == a;
+ devolveria true
+-a.substring(1,3).equals("bc");
+ devolveria true 
