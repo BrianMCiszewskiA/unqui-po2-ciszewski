@@ -1,0 +1,3 @@
+Si un objeto cualquiera le pide la edad a una persona, 
+no conoce como la persona calcula la edad, 
+debido al encapsulamiento de las subtareas que lo hacen.
