@@ -4,11 +4,16 @@ import java.util.Date;
 
 public class Persona {
 	private String nombre;
+	private String apellido;
 	private Date fechaNacimiento;
 	
 	public Persona(String nom, Date fNacimiento) {
 		this.setNombre(nom);
 		this.setFechaNacimiento(fNacimiento);
+	}
+	public Persona(String nom, String ape, Date fNacimiento) {
+		this(nom, fNacimiento);
+		this.setApellido(ape);
 	}
 	
 	private void setNombre(String nom) {
@@ -17,12 +22,18 @@ public class Persona {
 	private void setFechaNacimiento(Date fNacimiento) {
 		fechaNacimiento = fNacimiento;
 	}
+	private void setApellido(String ape){
+		apellido = ape;
+	}
 	
 	public String getNombre() {
 		return nombre;
 	}
 	public Date getFechaNacimiento() {
 		return fechaNacimiento; 
+	}
+	public String getApellido(){
+	 	return apellido;
 	}
 	@SuppressWarnings("deprecation")
 	public int getEdad() {
@@ -41,5 +52,9 @@ public class Persona {
 	
 	public boolean menorQue(Persona persona) {
 		return this.getEdad() < persona.getEdad();
+	}
+	
+	public String getNombreCompuesto(){
+		return nombre + " " + apellido;
 	}
 }
