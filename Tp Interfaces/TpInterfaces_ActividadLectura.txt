@@ -1,0 +1,12 @@
+1. Permite que ciertos metodos puedan ser usados por diferentes clases que entiendan
+ el mismo mensaje, y que estas puedan ser de diferentes tipos.
+2. Porque es mas limitante el uso de clases abstractas, y porque en este caso
+ no hay/se complica mas la herencia multiple.
+3. Pueden definir metodos aparte de los abstractos para no reescribir codigo y q se
+ hereden mas cosas q solo el "entender un mensaje".
+4. No.
+5. Porque quizas se terminan agregando cosas mas especificas que no queremos que
+ otras clases que usen la interfaz, entiendan.
+6. Porque ese tipo de lenguajes no son tipados, asiq no son necesarias las interfaces
+ porque no hay algo q te restrinja que se puede usar como parametro de algo
+ (si se usan mal van a dar error igual, pero eso es aparte).
