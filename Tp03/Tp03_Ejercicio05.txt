@@ -1,0 +1,6 @@
+1. En el sistema de archivos se crearon 3 carpetas: la carpeta model, y dentro de la carpeta model se crearon las
+ carpetas gui y stack. (En el eclipse estan por separado).
+
+2. Si. El nombre del paquete a los cuales pertenecen estos archivos indican el nombre de las carpetas/la direccion
+ donde se encuentran guardados. Dependiendo el tipo de archivo (y si esta activada la funcion de guardarlos por 
+ separado) se encuentran dentro de la carpeta src o bin, pero ambas son identicas en la estructura de carpetas.

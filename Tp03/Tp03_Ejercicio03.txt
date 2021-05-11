@@ -1,0 +1,11 @@
+1. son los tipos de datos predefinidos dentro del lenguaje, que permiten hacer las 
+ operaciones mas basicas (el resto de tipos suele estar hecho a partir de estos), 
+ en java los mas comunes son los numeros enteros (int), los caracteres (char) y los 
+ valores de verdad (boolean), entre otros.
+
+2. int es un numero y Integer una clase objeto.
+
+3. si se define una variable de instancia de tipo int, el valor predeterminado es 0,
+ si se define de tipo Integer su valor es null.
+
+4. en una variable de metodo el eclipse da error porque no se definieron los valores.
