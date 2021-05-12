@@ -22,46 +22,46 @@ class ClienteTestCase {
 		azucar = new ProductoEmpresaTradicional(125, 20, "Azucar Ledesma");
 		galletitas = new ProductoEmpresaTradicional(100, 12, "Galletitas de agua MediaTarde");
 		
-		pepito.addProducto(harina);
-		pepito.addProducto(yerbaMate);
-		pepito.addProducto(cafe);
-		pepito.addProducto(azucar);
-		pepito.addProducto(galletitas);
+		pepito.addPago(harina);
+		pepito.addPago(yerbaMate);
+		pepito.addPago(cafe);
+		pepito.addPago(azucar);
+		pepito.addPago(galletitas);
 	}
 	
 	
 	@Test
 	void testPepitoTieneUnoDeTodoEnSuLista() {
-		assertEquals(5, pepito.getProductos().size());
-		assert(pepito.getProductos().contains(harina));
-		assert(pepito.getProductos().contains(yerbaMate));
-		assert(pepito.getProductos().contains(cafe));
-		assert(pepito.getProductos().contains(azucar));
-		assert(pepito.getProductos().contains(galletitas));
+		assertEquals(5, pepito.getListaDeCompra().size());
+		assert(pepito.getListaDeCompra().contains(harina));
+		assert(pepito.getListaDeCompra().contains(yerbaMate));
+		assert(pepito.getListaDeCompra().contains(cafe));
+		assert(pepito.getListaDeCompra().contains(azucar));
+		assert(pepito.getListaDeCompra().contains(galletitas));
 	}
 	
 	@Test
 	void testPepitoSacaElAzucarDeLaLista() {
-		pepito.removeProducto(azucar);
-		assertEquals(4, pepito.getProductos().size());
-		assert(pepito.getProductos().contains(harina));
-		assert(pepito.getProductos().contains(yerbaMate));
-		assert(pepito.getProductos().contains(cafe));
-		assertFalse(pepito.getProductos().contains(azucar));
-		assert(pepito.getProductos().contains(galletitas));
+		pepito.removePago(azucar);
+		assertEquals(4, pepito.getListaDeCompra().size());
+		assert(pepito.getListaDeCompra().contains(harina));
+		assert(pepito.getListaDeCompra().contains(yerbaMate));
+		assert(pepito.getListaDeCompra().contains(cafe));
+		assertFalse(pepito.getListaDeCompra().contains(azucar));
+		assert(pepito.getListaDeCompra().contains(galletitas));
 	}
 	
 	@Test
 	void testPepitoAgregaMasCafeQueElStock() {
 		//se supone que se puede tener mas en la lista que en el stock, eso despues se verificaria en la caja
-		pepito.addProducto(cafe);
-		pepito.removeProducto(azucar);
-		pepito.removeProducto(yerbaMate);
-		pepito.removeProducto(galletitas);
-		pepito.removeProducto(harina);
-		assertEquals(2, pepito.getProductos().size());
-		assert(pepito.getProductos().contains(cafe));
-		assert(cafe.getStock()<pepito.getProductos().size());
+		pepito.addPago(cafe);
+		pepito.removePago(azucar);
+		pepito.removePago(yerbaMate);
+		pepito.removePago(galletitas);
+		pepito.removePago(harina);
+		assertEquals(2, pepito.getListaDeCompra().size());
+		assert(pepito.getListaDeCompra().contains(cafe));
+		assert(cafe.getStock()<pepito.getListaDeCompra().size());
 	}
 
 }

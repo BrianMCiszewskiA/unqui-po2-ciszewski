@@ -24,11 +24,11 @@ class CajaTestCase {
 		galletitas = new ProductoEmpresaTradicional(100, 12, "Galletitas de agua MediaTarde");
 		caja = new Caja();
 		
-		pepito.addProducto(harina);
-		pepito.addProducto(yerbaMate);
-		pepito.addProducto(cafe);
-		pepito.addProducto(azucar);
-		pepito.addProducto(galletitas);
+		pepito.addPago(harina);
+		pepito.addPago(yerbaMate);
+		pepito.addPago(cafe);
+		pepito.addPago(azucar);
+		pepito.addPago(galletitas);
 	}
 	
 	@Test
@@ -39,22 +39,22 @@ class CajaTestCase {
 	@Test
 	void testMontoTotalSinStock() {
 		//si se agrega algo que no tiene stock, el precio total deberia no incluir el elemento sin stock (si se quieren 2 cafes y solo hay uno, se suma solo el primero)
-		pepito.addProducto(cafe);
+		pepito.addPago(cafe);
 		assertEquals(650, caja.montoAPagar(pepito));
 	}
 	
 	
 	@Test
 	void testRegistroConStock() {
-		caja.registrarProductos(pepito.getProductos());
-		assertEquals(pepito.getProductos(), caja.getProductosRegistrados());
+		caja.registrarCompras(pepito.getListaDeCompra());
+		assertEquals(pepito.getListaDeCompra(), caja.getPagosRegistrados());
 	}
 	
 	@Test
 	void testRegistroSinStock() {
-		pepito.addProducto(cafe); //se supone que solo hay un cafe y esta linea esta agregando un segundo
-		caja.registrarProductos(pepito.getProductos());
+		pepito.addPago(cafe); //se supone que solo hay un cafe y esta linea esta agregando un segundo
+		caja.registrarCompras(pepito.getListaDeCompra());
 
-		assertNotEquals(pepito.getProductos(), caja.getProductosRegistrados());
+		assertNotEquals(pepito.getListaDeCompra(), caja.getPagosRegistrados());
 	}
 }

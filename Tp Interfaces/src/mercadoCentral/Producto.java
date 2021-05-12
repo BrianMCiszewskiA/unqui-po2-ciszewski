@@ -1,6 +1,6 @@
 package mercadoCentral;
 
-public abstract class Producto {
+public abstract class Producto implements Pagable{
 	protected float precioBase;
 	private int stock;
 	private String nombre;
@@ -27,6 +27,17 @@ public abstract class Producto {
 	public String getNombre() {
 		return nombre;
 	}
+
+	public void pagar() {
+			this.disminuirStock();
+	}
+	public boolean sePuedePagar() {
+		return this.getStock()>0;
+	}
+	public void mensajeDeErrorDePago() {
+		System.out.println("No hay mas stock de: " + this.getNombre());
+	}
+
 	
 	public void disminuirStock() {
 		try {

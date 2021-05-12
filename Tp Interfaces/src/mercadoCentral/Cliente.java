@@ -4,15 +4,15 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Cliente {
-	private List<Producto> listaProductos = new ArrayList<Producto>();
+	private List<Pagable> listaDeCompra = new ArrayList<Pagable>();
 	
-	public List<Producto> getProductos(){
-		return listaProductos;
+	public List<Pagable> getListaDeCompra(){
+		return listaDeCompra;
 	}
-	public void addProducto(Producto producto) {
-		listaProductos.add(producto);
+	public void addPago(Pagable pagable) {
+		listaDeCompra.add(pagable);
 	}
-	public void removeProducto(Producto producto) {
-		listaProductos.remove(producto);
+	public void removePago(Pagable pagable) {
+		listaDeCompra.remove(pagable);
 	}
 }

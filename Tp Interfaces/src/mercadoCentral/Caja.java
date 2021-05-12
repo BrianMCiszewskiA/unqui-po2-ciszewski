@@ -4,33 +4,34 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Caja {
-	private List<Producto> productosRegistrados = new ArrayList<Producto>();
+	private List<Pagable> pagosRegistrados = new ArrayList<Pagable>();
 	
 	public float montoAPagar(Cliente cliente) {
 		float montoTotal = 0;
-		for(Producto producto:cliente.getProductos()) {
-			montoTotal = montoTotal + producto.getPrecio();
-			this.registrarProducto(producto);
+		for(Pagable pagable:cliente.getListaDeCompra()) {
+			montoTotal = montoTotal + pagable.getPrecio();
+			this.registrarCompra(pagable);
 		}
 		return montoTotal;
 	}
 	
-	public void registrarProductos(List<Producto> productos) {
-		for (Producto producto:productos) {
-			this.registrarProducto(producto);
+	public void registrarCompras(List<Pagable> pagables) {
+		for (Pagable pagable:pagables) {
+			this.registrarCompra(pagable);
 		}
 	}
-	public void registrarProducto(Producto producto) {
-		if (producto.hayStock()) {
-			productosRegistrados.add(producto);
-			producto.disminuirStock();
+	public void registrarCompra(Pagable pagable) {
+		if (pagable.sePuedePagar()) {
+			pagosRegistrados.add(pagable);
+			pagable.pagar();
 		}
 		else {
-			System.out.println("No hay mas stock de: " + producto.getNombre());
+			pagable.mensajeDeErrorDePago();
 		}
+		
 	}
-	public List<Producto> getProductosRegistrados(){
-		return productosRegistrados;
+	public List<Pagable> getPagosRegistrados(){
+		return pagosRegistrados;
 	}
 	
 	
