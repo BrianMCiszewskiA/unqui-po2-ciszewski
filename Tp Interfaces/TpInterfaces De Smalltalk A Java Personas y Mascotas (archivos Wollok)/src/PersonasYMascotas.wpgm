@@ -1,0 +1,27 @@
+import persona.*
+import mascota.*
+
+program abc {
+	var pepito = new Persona(nombre="Pepito",
+							diaNacimiento = 02,
+							mesNacimiento = 04,
+							anioNacimiento = 1990
+		)
+	var roberto = new Persona(nombre="Roberto",
+							diaNacimiento = 15,
+							mesNacimiento = 03,
+							anioNacimiento = 1960
+		)
+	
+	var rufus = new Mascota(nombre = "Rufus", raza = "Bulldog Frances")
+	var doge = new Mascota(nombre = "Doge", raza = "Shiba Inu")
+	
+	const coleccion = []
+	
+	coleccion.add(pepito)
+	coleccion.add(roberto)
+	coleccion.add(rufus)
+	coleccion.add(doge)
+	
+	coleccion.forEach {e => console.println(e.getNombre())}	
+}

@@ -1,0 +1,11 @@
+Si se utilizaran directamente los tipos tal cual estan, darian error,
+ si se usaran con el tipo "Collection<>" y entre los <> se pusieran 
+ los tipos creados pasaria lo siguiente:
+
+-getFirstFrom: devolveria el primer objeto de la coleccion dada.
+-addLast: devolveria una coleccion identica a la dada, pero con el 
+  objeto dado agregado al final.
+-getSubCollection: devolveria una coleccion con los objetos entre
+  las posiciones dadas, de la coleccion original.
+-containsElement: devolveria un valor de verdad indicando si el objeto
+  dado forma parte de la coleccion dada.

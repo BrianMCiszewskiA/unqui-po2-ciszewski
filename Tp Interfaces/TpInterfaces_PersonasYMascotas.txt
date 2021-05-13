@@ -1,0 +1,6 @@
+4. No fue necesario distinguir entre Persona o Mascota
+ porque gracias al polimorfismo, ambos entienden el mismo mensaje.
+
+5. Se podria, pero no seria la mejor opcion. Lo mejor en java seria
+ usar una interfaz "Nombrable" o algo por el estilo, para asegurarse
+ que ambos tipos entendieran el mensaje "getNombre()".
