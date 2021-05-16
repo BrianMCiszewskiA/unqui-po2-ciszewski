@@ -1,0 +1,4 @@
+En clienteEMail hay cosas como la conexion directa a servidoPop en vez de a IServidor
+esta cargado con varias responsabilidades como las conexiones y el manejo de correo borrado y correo inbox
+
+Y en los servidores tmb hay problemas de responsabilidad, la conexion y el reinicio/backup del server
