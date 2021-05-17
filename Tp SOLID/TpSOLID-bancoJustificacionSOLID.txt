@@ -1,0 +1,4 @@
+Cree diversas interfaces para dividir mejor las responsabilidades de las clases, principalmente la del banco.
+En cliente y propiedad no cree interfaces adicionales porq no lo consideraba necesario y no da mucho pie en si a 
+ tener varias responsabilidades y/o a ampliar mucho el diseño.
+Banco tiene pie a ampliarse, cliente en si podria tener subclases si se quiere diferenciar en algo.
