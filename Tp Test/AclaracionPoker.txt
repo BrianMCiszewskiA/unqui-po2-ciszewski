@@ -1,0 +1,2 @@
+Estan por separado los test y clases de poker con las cartas representadas en strings, y las cartas representadas
+ con su propio tipo.
