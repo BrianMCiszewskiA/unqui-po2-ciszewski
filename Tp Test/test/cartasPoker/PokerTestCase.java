@@ -9,16 +9,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class PokerTestCase {
-	//Pendiente marcar secciones setup etc
+	//Setup
 	PokerStatus poker;
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		//Setup
 		poker = new PokerStatus();
 	}
 
 	@Test
 	void testPoker() {
+		//Verify
 		assertEquals("Poker", poker.verificar("8T", "9T", "8D", "8C", "8P"));
 		assertNotEquals("Poker", poker.verificar("8T", "9T", "8D", "9C", "8P"));
 		assertNotEquals("Poker", poker.verificar("8T", "9T", "8D", "7C", "10P"));
@@ -26,6 +28,7 @@ class PokerTestCase {
 	
 	@Test
 	void testDistintasVerificaciones(){
+		//Verify
 		assertEquals("Poker", poker.verificar("8T", "9T", "8D", "8C", "8P"));
 		assertEquals("Color", poker.verificar("8T", "9T", "7T", "JT", "10T"));
 		assertEquals("Trio", poker.verificar("8T", "9T", "8D", "8C", "9P"));
@@ -35,6 +38,7 @@ class PokerTestCase {
 	
 	@Test
 	void testPoker2() {
+		//Verify
 		assertTrue(poker.hayPoker(this.manoPoker()));
 		assertFalse(poker.hayPoker(this.manoTrio()));
 		assertFalse(poker.hayPoker(this.manoColor()));
@@ -43,6 +47,7 @@ class PokerTestCase {
 	}
 	@Test
 	void testTrio() {
+		//Verify
 		assertFalse(poker.hayTrio(this.manoPoker()));
 		assertTrue(poker.hayTrio(this.manoTrio()));
 		assertFalse(poker.hayTrio(this.manoColor()));
@@ -51,6 +56,7 @@ class PokerTestCase {
 	}
 	@Test
 	void testColor() {
+		//Verify
 		assertFalse(poker.hayColor(this.manoPoker()));
 		assertFalse(poker.hayColor(this.manoTrio()));
 		assertTrue(poker.hayColor(this.manoColor()));
@@ -59,6 +65,7 @@ class PokerTestCase {
 	}
 	@Test
 	void testColores() {
+		//Verify
 		assertEquals("T", poker.colorDe("10T"));
 		assertEquals("C", poker.colorDe("5C"));
 		assertTrue(poker.coloresMano(this.manoNada()).contains("T"));
@@ -70,6 +77,7 @@ class PokerTestCase {
 	
 	@Test
 	void testValoresDistintos() {
+		//Verify
 		assertEquals("10", poker.cartaAValor("10T"));
 		assertEquals("5", poker.cartaAValor("5C"));
 		assertTrue(poker.valoresDistintos(this.manoTrio()).contains("10"));
@@ -80,6 +88,7 @@ class PokerTestCase {
 	
 	@Test
 	void testCantidadRepetidos() {
+		//Verify
 		assertEquals(4, poker.cantMaxRepeticionNumerica(this.manoPoker()));
 		assertEquals(3, poker.cantMaxRepeticionNumerica(this.manoTrio()));
 		assertEquals(1, poker.cantMaxRepeticionNumerica(this.manoColor()));
@@ -91,7 +100,7 @@ class PokerTestCase {
 		
 	}
 	
-	
+	//Excercise
 	List<String> manoPoker(){
 		//devuelve una "mano" con poker.
 		return this.mano("8T", "9T", "8D", "8C", "8P");

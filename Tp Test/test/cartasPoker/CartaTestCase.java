@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CartaTestCase {
+	//Setup
 	Carta ochoTrebol;
 	Carta ochoCorazon;
 	Carta nuevePica;
@@ -17,6 +18,7 @@ class CartaTestCase {
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		//Setup
 		ochoTrebol = new Carta(8, "Trebol");
 		ochoCorazon = new Carta(8, "Corazon");
 		nuevePica = new Carta(9, "Pica");
@@ -29,6 +31,7 @@ class CartaTestCase {
 
 	@Test
 	void testValor() {
+		//Verify
 		assertEquals(8, ochoTrebol.valor());
 		assertEquals(8, ochoCorazon.valor());
 		assertEquals(1, asDiamante.valor());
@@ -40,6 +43,7 @@ class CartaTestCase {
 	
 	@Test
 	void testColor() {
+		//Verify
 		assertEquals("Trebol", ochoTrebol.color());
 		assertEquals("Corazon", ochoCorazon.color());
 		assertEquals("Pica", nuevePica.color());
@@ -47,6 +51,7 @@ class CartaTestCase {
 	}
 	@Test
 	void testNombre() {
+		//Verify
 		assertEquals("8 de Trebol", ochoTrebol.nombre());
 		assertEquals("As de Diamante", asDiamante.nombre());
 		assertEquals("Rey de Pica", kPica.nombre());
@@ -56,6 +61,7 @@ class CartaTestCase {
 	
 	@Test
 	void testComparacionNumerica() {
+		//Verify
 		assertTrue(ochoTrebol.esMayorA(asDiamante));
 		assertTrue(nuevePica.esMayorA(ochoTrebol));
 		assertTrue(kDiamante.esMayorA(jPica));
@@ -66,6 +72,7 @@ class CartaTestCase {
 	
 	@Test
 	void testComparacionColor() {
+		//Verify
 		assertTrue(asDiamante.sonDeMismoPalo(kDiamante));
 		assertTrue(jPica.sonDeMismoPalo(kPica));
 		assertFalse(ochoTrebol.sonDeMismoPalo(ochoCorazon));
