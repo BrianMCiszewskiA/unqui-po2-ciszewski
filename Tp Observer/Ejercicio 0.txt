@@ -1,0 +1,10 @@
+El complexObserver sirve para cuando tenes que observar mas de un dato y queres que si les sirve a los observers
+	hagan algo con eso, y sino, no.
+
+El complexWithListener sirve para cuando tenes que observar mas de un dato y todos los observers hacen algo con 
+	cada dato observado, pero no esta tan copado cuando no todos hacen algo con eso.
+
+El simpleObserver esta bueno para cuando tenes que observar solo un dato.
+
+En los casos donde la misma clase observadora se encuentre observando mas de un sensor, lo ideal seria que se
+	separen en interfaces.
